@@ -457,3 +457,9 @@ def change_case_type(request):
     except ValidationError as e:
         return HttpResponse(e.message, status=400)
     return JsonResponse({'Oki :3': 'All changes were applied correctly', 'id': str(new_request.id)})
+
+
+@csrf_exempt
+@api_view(["PATCH"])
+def discard_case(request):
+    print('a')
